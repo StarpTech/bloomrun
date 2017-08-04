@@ -544,7 +544,7 @@ test('issue#57 - Removing many pattern should not lead to finite recursion', fun
   t.plan(1)
 
   var instance = bloomrun()
-  const noop = () => 'test'
+  var noop = () => 'test'
 
   instance.add({ topic: 'math', cmd: 'add1' }, noop)
   instance.add({ topic: 'math', cmd: 'add2' }, noop)

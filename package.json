@@ -4,7 +4,7 @@
   "description": "JS object pattern matching",
   "main": "bloomrun.js",
   "scripts": {
-    "bench": "node bench.js",
+    "bench": "node benchmarks/bench2.js",
     "test": "standard | snazzy && tape test.js | faucet",
     "zuul-local": "zuul --open --local 8081 -- test.js",
     "coverage": "istanbul cover tape test.js > /dev/null; open coverage/lcov-report/index.html",
@@ -21,6 +21,7 @@
     "sorted-array-functions": "^1.0.0"
   },
   "devDependencies": {
+    "benchmark": "^2.1.4",
     "coveralls": "^2.13.1",
     "fastbench": "^1.0.0",
     "faucet": "0.0.1",

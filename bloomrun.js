@@ -55,10 +55,6 @@ Bloomrun.prototype.add = function (pattern, payload) {
   return this
 }
 
-function addPatternSet (patternSet) {
-  this.add(patternSet.pattern, patternSet.payload)
-}
-
 function removeBucket (buckets, bucket) {
   for (var i = 0; i < buckets.length; i++) {
     if (bucket === buckets[i]) {
@@ -85,7 +81,6 @@ Bloomrun.prototype.remove = function (pattern, payload) {
 
           if (bucket.remove(pattern, payload)) {
             removeBucket(this._buckets, bucket)
-            bucket.forEach(addPatternSet, this)
             if (bucket.data.length === 0) {
               delete this._tree[key][pattern[key]]
             }
